@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import home, singlecode
+from .views import homeView, singlecode, search_result
 
 urlpatterns = [
-    path('', home, name="home"),
+    path('', homeView.as_view(), name="home"),
     path('<int:id>/', singlecode, name="singlecode"),
+    path('result/', search_result, name="search_result"),
+
 
 ]
