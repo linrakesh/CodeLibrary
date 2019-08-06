@@ -1,0 +1,8 @@
+{% extends 'library/base.html' %}
+    {% block content %}
+        <ol>
+        {% for post in posts %}
+            <li><a href="{% url 'singlecode' post.id %}">{{post.title|upper}} - {{post.language}} - {{post.keywords}}-{{post.updated_on}}</a></li>
+        {% endfor%}
+        </ol>
+    {% endblock %}

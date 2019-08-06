@@ -1,0 +1,5 @@
+{% extends 'library/base.html' %}
+    {% block content %}    
+        <h2>{{post.title}} - {{post.language}} - {{post.keywords}}-{{post.updated_on}}</h2>
+        <pre> {{post.code}} </pre>
+    {% endblock content %}

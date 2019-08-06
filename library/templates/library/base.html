@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Django Based Code Library Home Page-Document</title>
+</head>
+<body>
+    <h1><a href="{% url 'home' %}">Code Library</a></h1>
+    <p> Codes for Programmer by the Programmers</p>
+    {% include 'library/searchform.html'  %}
+
+    {% block content %}
+    {% endblock content %}
+   
+    {% include 'library/pagination.html' %}
+    <hr>
+    <p> By - Rakesh Kumar & Team </p>
+</body>
+</html>
