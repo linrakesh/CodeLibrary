@@ -14,6 +14,7 @@ class homeView(ListView):
     model = code
     context_object_name = 'posts'
     paginate_by = 10
+    queryset = code.objects.all().order_by('-updated_on')
     template_name = 'library/home.html'
 
 class addCode(CreateView):
@@ -40,10 +41,10 @@ def search_result(request):
         lang = request.GET['lang']
         if lang == '':
             posts = code.objects.filter(
-                keywords__icontains=query).order_by('-updated_on')
+                keywords__icontains=query).order_by('updated_on')
         else:
             posts = code.objects.filter(
-                keywords__icontains=query, language__language=lang).order_by('-updated_on')
+                keywords__icontains=query, language__language=lang).order_by('updated_on')
 
     return render(request, 'library/home.html', {'posts': posts})
 
