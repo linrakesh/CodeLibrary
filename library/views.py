@@ -1,5 +1,6 @@
+from django.urls import reverse_lazy
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView,CreateView,UpdateView,DeleteView
 from .models import language, code
 
 # Create your views here.
@@ -15,6 +16,23 @@ class homeView(ListView):
     paginate_by = 10
     template_name = 'library/home.html'
 
+class addCode(CreateView):
+    model = code
+    fields = ('title','code','keywords','language','status','updated_on')
+    template_name = 'library/codeForm.html'
+    success_url = reverse_lazy('home')
+
+
+class updateCode(UpdateView):
+    model = code
+    fields = ('title', 'code', 'keywords', 'language')
+    template_name = 'library/codeForm.html'
+    success_url = reverse_lazy('home')
+
+
+class deleteCode(DeleteView):
+    model = code
+    success_url = reverse_lazy('home')
 
 def search_result(request):
     if request.GET:

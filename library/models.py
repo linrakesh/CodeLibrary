@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -20,5 +21,8 @@ class code(models.Model):
     submitted_on = models.DateField(auto_now=True)
     updated_on = models.DateField(auto_now=False)
 
-    # def __str__(self):
-    #     return self.title + "-" + str(self.language)
+    def __str__(self):
+        return self.title + "-" + str(self.language)
+
+    def get_absolute_url(self):
+    	return reverse('singlecode', kwargs={'pk': self.pk})
