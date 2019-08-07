@@ -14,12 +14,12 @@ class homeView(ListView):
     model = code
     context_object_name = 'posts'
     paginate_by = 10
-    queryset = code.objects.all().order_by('-updated_on')
+    queryset = code.objects.filter(status='Pub').order_by('-updated_on')
     template_name = 'library/home.html'
 
 class addCode(CreateView):
     model = code
-    fields = ('title','code','keywords','language','status','updated_on')
+    fields = ('title','code','keywords','language','updated_on')
     template_name = 'library/codeForm.html'
     success_url = reverse_lazy('home')
 
