@@ -8,6 +8,4 @@ urlpatterns = [
     path('add/', addCode.as_view(), name="add"),
     path('<int:pk>/update/', updateCode.as_view(), name="update"),
     path('<int:pk>/delete/', deleteCode.as_view(), name="delete"),
-
-
 ]

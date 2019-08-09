@@ -1,21 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Django Based Code Library Home Page-Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    <h1><a href="{% url 'home' %}">Code Library</a></h1>
-    <p> Codes for Programmer by the Programmers</p>
+    <div class="container">
+        <div class="logo">
+            <h1><a href="{% url 'home' %}">Code Library</a></h1>
+            <p> Codes for Programmer by the Programmers</p>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'add' %}">Add New Code</a></li>
+                <li><a href="">Edit Code</a></li>
+                <li><a href="">Delete Code</a></li>
+                <li><a href="">Login/Register</a></li>
+
+            </ul>
+        </div>
+    </div>
+    <!--end of container class-->
+
+
+
     {% include 'library/searchform.html'  %}
 
     {% block content %}
     {% endblock content %}
-   
+
     {% include 'library/pagination.html' %}
     <hr>
     <p> By - Rakesh Kumar & Team </p>
 </body>
+
 </html>

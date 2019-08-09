@@ -14,7 +14,7 @@ class homeView(ListView):
     model = code
     context_object_name = 'posts'
     paginate_by = 10
-    queryset = code.objects.filter(status='Pub').order_by('-updated_on')
+    # queryset = code.objects.filter(status='Pub').order_by('-updated_on')
     template_name = 'library/home.html'
 
 class addCode(CreateView):
