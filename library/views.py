@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView,CreateView,UpdateView,DeleteView
 from .models import language, code
 
+
 # Create your views here.
 
 
@@ -13,8 +14,8 @@ from .models import language, code
 class homeView(ListView):
     model = code
     context_object_name = 'posts'
-    paginate_by = 10
-    # queryset = code.objects.filter(status='Pub').order_by('-updated_on')
+    paginate_by = 11
+    queryset = code.objects.all().order_by('-updated_on')
     template_name = 'library/home.html'
 
 class addCode(CreateView):
@@ -42,10 +43,10 @@ def search_result(request):
         lang = request.GET['lang']
         if lang == '':
             posts = code.objects.filter(
-                keywords__icontains=query).order_by('updated_on')
+                keywords__name__in=query).order_by('-updated_on')
         else:
             posts = code.objects.filter(
-                keywords__icontains=query, language__language=lang).order_by('updated_on')
+                keywords__name__in=query, language__language=lang).order_by('-updated_on')
 
     return render(request, 'library/home.html', {'posts': posts})
 

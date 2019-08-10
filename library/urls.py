@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import homeView, singlecode,addCode,updateCode,deleteCode, search_result
 
+
 urlpatterns = [
     path('', homeView.as_view(), name="home"),
     path('<int:id>/', singlecode, name="singlecode"),
@@ -8,4 +9,5 @@ urlpatterns = [
     path('add/', addCode.as_view(), name="add"),
     path('<int:pk>/update/', updateCode.as_view(), name="update"),
     path('<int:pk>/delete/', deleteCode.as_view(), name="delete"),
+    
 ]

@@ -1,4 +1,4 @@
-<form id="searchform" action="{% url 'search_result' %}" method="get" accept-charset="utf-8">
+<form id="searchform" class="searchform" action="{% url 'search_result' %}" method="get" accept-charset="utf-8">
       {% csrf_token %}     
       <input class="searchfield" id="searchbox" name="q" type="text" value="{{request.GET.q}}" placeholder="Search">
       <select name="lang">
