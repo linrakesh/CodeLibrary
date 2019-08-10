@@ -27,6 +27,7 @@ class addCode(CreateView):
 class updateCode(UpdateView):
     model = code
     fields = ('title', 'code', 'keywords', 'language')
+    context_object_name = 'post'
     template_name = 'library/codeForm.html'
     success_url = reverse_lazy('home')
 

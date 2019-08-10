@@ -1,5 +1,10 @@
 {% extends 'library/base.html' %}
     {% block content %}    
-        <h2>{{post.title}} - {{post.language}} - {{post.keywords}}-{{post.updated_on}}</h2>
+        <h2>{{post.title|upper}} - </h2>
+        <p> <strong> Language </strong> : {{post.language}} | Last Updated on {{post.updated_on}} </p>         
         <pre> {{post.code}} </pre>
+        <p><strong> Keywords </strong> : <span class="meta-tag"> {{post.keywords}} </span> </p>
+        <a class="button" href="{% url 'update' post.pk %}"> Edit Code</a>
+        <a class="button" href="{% url 'delete' post.pk %}"> Delete Code </a>
+
     {% endblock content %}

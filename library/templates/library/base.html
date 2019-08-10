@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Django Based Code Library Home Page-Document</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
 </head>
 
 <body>
@@ -20,25 +21,33 @@
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'add' %}">Add New Code</a></li>
-                <li><a href="">Edit Code</a></li>
-                <li><a href="">Delete Code</a></li>
                 <li><a href="">Login/Register</a></li>
-
             </ul>
         </div>
     </div>
     <!--end of container class-->
+<div id="search" >
+    <div class="container">
+        {% include 'library/searchform.html'  %}
+    </div>
+</div>
 
+    <div class="container">
+        <div class="code">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
 
-
-    {% include 'library/searchform.html'  %}
-
-    {% block content %}
-    {% endblock content %}
-
-    {% include 'library/pagination.html' %}
-    <hr>
-    <p> By - Rakesh Kumar & Team </p>
+<div class="container">
+    <div class="code">
+        {% include 'library/pagination.html' %}
+    </div>
+</div>    
+<footer id="footer">
+    <div class="container">
+        <p> Designed and Developerd by : Binarynote.com Team </p>
+    </div>
+</footer>
 </body>
-
 </html>

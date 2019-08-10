@@ -1,6 +1,6 @@
 {% extends 'library/base.html' %}
     {% block content %}
-        <form action="" method="POST">
+        <form class="codeform" action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
             <button name="submit" type="submit" value="submit">Submit</button>
