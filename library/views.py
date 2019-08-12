@@ -1,10 +1,13 @@
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+
 from .models import language, code
+
 from taggit.models import Tag
 
 from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 
@@ -36,14 +39,14 @@ def tagList(request, tag_slug=None):
     return render(request, 'library/home.html', {'posts': posts})
 
 
-class addCode(CreateView):
+class addCode(LoginRequiredMixin, CreateView):
     model = code
     fields = ('title', 'code', 'keywords', 'language', 'updated_on', 'author')
     template_name = 'library/codeForm.html'
     success_url = reverse_lazy('home')
 
 
-class updateCode(UpdateView):
+class updateCode(LoginRequiredMixin, UpdateView):
     model = code
     fields = ('title', 'code', 'keywords', 'language')
     context_object_name = 'post'
@@ -51,7 +54,7 @@ class updateCode(UpdateView):
     success_url = reverse_lazy('home')
 
 
-class deleteCode(DeleteView):
+class deleteCode(LoginRequiredMixin, DeleteView):
     model = code
     success_url = reverse_lazy('home')
 
