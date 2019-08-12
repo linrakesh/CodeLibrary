@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.urls import reverse
 from taggit.managers import TaggableManager
 
@@ -22,6 +23,7 @@ class code(models.Model):
     status = models.CharField(max_length=20, choices=STATUS, default='Dr')
     submitted_on = models.DateField(auto_now=True)
     updated_on = models.DateField(auto_now=False)
+    author      =models.ForeignKey(User, default = 1, on_delete = models.CASCADE)
 
     def __str__(self):
         return self.title + "-" + str(self.language)

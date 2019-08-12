@@ -12,8 +12,15 @@
                 <tr>
                     <td> <a href="{% url 'singlecode' post.id %}"> {{post.title|upper}} </td>
                     <td> {{post.language}} </td>
-                    <td> {{post.keywords}} </td>
-                    <td> {{post.updated_on}} </td>
+                    <td>
+                        <ul class="tags">
+                                {% for tag in post.keywords.all %}
+                                    <li><a href ="{% url 'taglist' tag.slug %}">{{ tag.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        {% comment %} {{post.keywords.all|join:" , "}} {% endcomment %}
+                    <td><a href="{% url 'authorList' post.author_id %}"> {{post.author}} </a> - <span style="font-size:12px;">{{post.updated_on}}</span> </td>
                 </tr>
             {% endfor%}
         </table>
