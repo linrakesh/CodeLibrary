@@ -73,6 +73,6 @@ def search_result(request):
     return render(request, 'library/home.html', {'posts': posts})
 
 
-def singlecode(request, id):
-    post = code.objects.get(pk=id)
+def singlecode(request, pk):
+    post = code.objects.get(pk=pk)
     return render(request, "library/single.html", {'post': post})

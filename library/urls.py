@@ -4,7 +4,7 @@ from .views import homeView, singlecode, addCode, updateCode, deleteCode, search
 
 urlpatterns = [
     path('', homeView.as_view(), name="home"),
-    path('<int:id>/', singlecode, name="singlecode"),
+    path('<int:pk>/', singlecode, name="singlecode"),
     path('result/', search_result, name="search_result"),
     path('tag/<slug:tag_slug>/', tagList, name="taglist"),
     path('user/<int:pk>/', authorView, name="authorList"),
