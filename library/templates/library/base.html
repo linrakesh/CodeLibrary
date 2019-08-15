@@ -1,59 +1,96 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Django Based Code Library Home Page-Document</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
-</head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/favicon.png' %}"
+      type="image/x-icon"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="logo">
-            <h1><a href="{% url 'home' %}">Code Library</a></h1>
-            <p> Codes for Programmer by the Programmers</p>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'add' %}">Add New Code</a></li>
-                {% if user.is_authenticated %}
-                    <li><a href="{% url 'profile' %}">Profile</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                {% else %}
-                    <li><a href="{% url 'register' %}">Register</a></li>
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                {% endif %}
-
-            </ul>
-        </div>
+      <div class="logo">
+        <h1><a href="{% url 'home' %}">Code Library</a></h1>
+        <p>Codes for Programmer by the Programmers</p>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'add' %}">Add New Code</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'profile' %}">Profile</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'register' %}">Register</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
     <!--end of container class-->
-<div id="search" >
-    <div class="container">
-        {% include 'library/searchform.html'  %}
-    </div>
-</div>
-
-    <div class="container">
-        <div class="code">
-            {% block content %}
-            {% endblock content %}
-        </div>
+    <div id="search">
+      <div class="container">
+        {% include 'library/searchform.html' %}
+      </div>
     </div>
 
-<div class="container">
-    <div class="code">
+    <div class="container">
+      <div class="code">
+        {% block content %} {% endblock content %}
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="code">
         {% include 'library/pagination.html' %}
+      </div>
     </div>
-</div>
-<footer id="footer">
-    <div class="container">
-        <p> Designed and Developerd by : Binarynote.com Team </p>
-    </div>
-</footer>
-</body>
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-widget">
+          <h4>About Us</h4>
+          <p>
+            CodeLibrary is a brain child of rakesh kumar who is very active in
+            web development since 2010. Before that he has been working in the
+            field of Desktop
+          </p>
+        </div>
+        <div class="footer-widget">
+          <h4>About Us</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi quas
+            quam libero ut possimus in commodi? Nulla dignissimos rerum totam
+            numquam dolores, iusto vitae excepturi. Fugiat aliquam vel rerum
+            animi!
+          </p>
+        </div>
+        <div class="footer-widget">
+          <h4>About Us</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi quas
+            quam libero ut possimus in commodi? Nulla dignissimos rerum totam
+            numquam dolores, iusto vitae excepturi. Fugiat aliquam vel rerum
+            animi!
+          </p>
+        </div>
+        <div class="footer-widget">
+          <h4>About Us</h4>
+          <ul>
+            <li>
+              <a href="{% url 'django.contrib.sitemaps.views.sitemap' %}"
+                >sitemap</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

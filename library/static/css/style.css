@@ -47,6 +47,7 @@ pre {
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
+  justify-content: space-between;
 }
 .container .logo {
   flex: 2;
@@ -177,4 +178,28 @@ ul.tags {
 ul.tags li {
   display: inline-block;
   padding: 0px 2px;
+}
+
+.footer-widget {
+  flex-basis: 23%;
+}
+.footer-widget p {
+  text-align: left;
+}
+.footer-widget a {
+  color: #e7e7e7;
+}
+.footer-widget a:hover {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  transition: all 0.5s ease-in;
+}
+.footer-widget ul {
+  list-style-type: none;
+  margin-left: -40px;
+}
+
+#copyright {
+  text-align: center;
+  display: block;
 }

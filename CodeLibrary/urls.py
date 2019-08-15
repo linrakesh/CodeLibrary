@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.sitemaps.views import sitemap
 from library.sitemaps import CodeSitemap
 
@@ -25,12 +24,10 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', LoginView.as_view(template_name="user/login.html"), name="login"),
-    path('logout/', LoginView.as_view(template_name="user/log_out.html"), name="logout"),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
     # path('accounts/', include('django.contrib.auth.urls')),
     path('', include('library.urls')),
-    path('register/', include('users.urls')),
+    path('', include('users.urls')),
 
 ]
