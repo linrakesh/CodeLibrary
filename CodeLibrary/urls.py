@@ -28,6 +28,6 @@ urlpatterns = [
          name='django.contrib.sitemaps.views.sitemap'),
     # path('accounts/', include('django.contrib.auth.urls')),
     path('', include('library.urls')),
-    path('register/', include('users.urls')),
+    path('', include('users.urls')),
 
 ]

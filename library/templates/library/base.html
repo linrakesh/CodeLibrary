@@ -21,9 +21,11 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'add' %}">Add New Code</a></li>
                 {% if user.is_authenticated %}
-                    <li> Hi {{user.username}} <a href="#">Logout</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
-                    <li><a href="#">Login</a></li>
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
                 {% endif %}
 
             </ul>
