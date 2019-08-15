@@ -1,0 +1,11 @@
+<!-- templates/registration/login.html -->
+{% extends 'library/base.html' %}
+    {% block content%}
+        <h2>Register New user</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Create</button>
+        </form>
+        Already have ID? <a href="#"> Login</a>
+    {% endblock content%}

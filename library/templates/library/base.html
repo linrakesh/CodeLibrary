@@ -21,11 +21,11 @@
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="{% url 'add' %}">Add New Code</a></li>
                 {% if user.is_authenticated %}
-                    <li> Hi {{user.username}} <a href="{% url 'logout' %}">Logout</a></li>
+                    <li> Hi {{user.username}} <a href="#">Logout</a></li>
                 {% else %}
-                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="#">Login</a></li>
                 {% endif %}
-                
+
             </ul>
         </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="code">
         {% include 'library/pagination.html' %}
     </div>
-</div>    
+</div>
 <footer id="footer">
     <div class="container">
         <p> Designed and Developerd by : Binarynote.com Team </p>
