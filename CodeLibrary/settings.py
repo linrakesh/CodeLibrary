@@ -133,5 +133,5 @@ EMAIL_HOST = 'mail.binarynote.com'
 EMAIL_PORT = 26
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'rakesh@binarynote.com'
-EMAIL_HOST_PASSWORD = 'ramji00789%$#@!'
+EMAIL_HOST_PASSWORD = '*************'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
