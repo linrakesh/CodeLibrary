@@ -127,11 +127,17 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'home'
 #LOGOUT_REDIRECT_URL = '/'
 
+MEDIA_URL = '/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.binarynote.com'
 EMAIL_PORT = 26
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'rakesh@binarynote.com'
-EMAIL_HOST_PASSWORD = '*************'
+EMAIL_HOST_PASSWORD = 'ramji00789%$#@!'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

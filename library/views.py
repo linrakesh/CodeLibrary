@@ -19,8 +19,15 @@ class homeView(ListView):
     model = code
     context_object_name = 'posts'
     paginate_by = 11
-    queryset = code.objects.all().order_by('-updated_on')
+    # queryset = code.objects.all().order_by('-updated_on')
     template_name = 'library/home.html'
+
+    def get_queryset(self):
+        # return code.objects.filter(author=self.request.user).order_by('-updated_on')
+        if self.request.user.is_authenticated:
+            return code.objects.filter(author_id=self.request.user).order_by('-updated_on')
+        else:
+            return code.objects.all().order_by('-updated_on')
 
 
 def authorView(request, pk=None):
