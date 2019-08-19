@@ -48,7 +48,7 @@ def tagList(request, tag_slug=None):
 
 class addCode(LoginRequiredMixin, CreateView):
     model = code
-    fields = ('title', 'code', 'keywords', 'language', 'updated_on', 'author')
+    fields = ('title', 'code', 'keywords', 'language', 'updated_on')
     template_name = 'library/codeForm.html'
     success_url = reverse_lazy('home')
 

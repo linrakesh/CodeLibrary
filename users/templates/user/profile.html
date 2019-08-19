@@ -1,16 +1,16 @@
-{% extends 'library/base.html' %} {% block content%}
-<h2>{{ user.username }} - Profile</h2>
-<hr />
-<img src="{{ user.userprofile.profile_photo.url }}" />
-<p>
-  First Name : {{ user.firstname }} Last Name : {{ user.lastname }}<br />
-  Email ID : {{ user.email }}
-  <p><strong>Author Bio </strong> {{ user.userprofile.biodata }}</p>
-  <p><strong>FaceBook</strong> :{{user.userprofile.facebook}} </p>
-  <p><strong>twitter</strong> :{{user.userprofile.twitter}} </p>
-  <p><strong>instagram</strong> :{{user.userprofile.instagram}} </p>
-  <p><strong>Quora</strong> :{{user.userprofile.quora}} </p>
-  <p><strong>Linkedin</strong> :{{user.userprofile.linkedin}} </p>
-</p>
-
+{% extends 'library/base.html' %}
+{% block content%}
+  <h2>{{ user.username }} - Profile</h2>
+  <hr />
+  <img src="{{ user.userprofile.profile_photo.url }}" />
+  <p>
+    First Name : {{ user.firstname }} Last Name : {{ user.lastname }}<br />
+    Email ID : {{ user.email }}
+    <p><strong>Author Bio </strong> {{ user.userprofile.biodata }}</p>
+    <p><strong>FaceBook</strong> :{{user.userprofile.facebook}} </p>
+    <p><strong>twitter</strong> :{{user.userprofile.twitter}} </p>
+    <p><strong>instagram</strong> :{{user.userprofile.instagram}} </p>
+    <p><strong>Quora</strong> :{{user.userprofile.quora}} </p>
+    <p><strong>Linkedin</strong> :{{user.userprofile.linkedin}} </p>
+  </p>
 {% endblock content%}
