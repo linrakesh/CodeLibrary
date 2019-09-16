@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
-from .models import language, code
+from .models import language, code, websiteOption
 
 from taggit.models import Tag
 
@@ -83,3 +83,27 @@ def search_result(request):
 def singlecode(request, pk):
     post = code.objects.get(pk=pk)
     return render(request, "library/single.html", {'post': post})
+
+
+def aboutus(request):
+    return render(request, "library/about.html")
+
+
+def privacy(request):
+    return render(request, "library/policy.html")
+
+
+def disclaimer(request):
+    return render(request, "library/disclaimer.html")
+
+
+def write_for_us(request):
+    return render(request, "library/write.html")
+
+
+def submit_code(request):
+    return render(request, "library/submit_code.html")
+
+
+def contact_us(request):
+    return render(request, "library/contact_us.html")

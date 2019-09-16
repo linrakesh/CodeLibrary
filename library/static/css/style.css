@@ -149,7 +149,7 @@ button {
 
 /*--------------searchform--------------*/
 .searchform input {
-  width: 52vw;
+  width: 73vw;
 }
 
 /*-----------------button------------*/
@@ -182,6 +182,7 @@ ul.tags li {
 
 .footer-widget {
   flex-basis: 23%;
+  color: #e3e3e3;
 }
 .footer-widget p {
   text-align: left;

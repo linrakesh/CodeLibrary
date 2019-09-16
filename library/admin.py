@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import language, code
+from .models import language, code, websiteOption
 
 # Register your models here.
 
@@ -19,4 +19,5 @@ class codeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(language)
+admin.site.register(websiteOption)
 admin.site.register(code, codeAdmin)

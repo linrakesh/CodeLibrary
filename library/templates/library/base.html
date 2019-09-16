@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
-        {% block title %} {% endblock title %}
+      {% block title %} {% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link
@@ -58,11 +58,13 @@
     <footer id="footer">
       <div class="container">
         <div class="footer-widget">
-          <h4>About Us</h4>
+          <h4>About Developer</h4>
           <p>
-            CodeLibrary is a brain child of rakesh kumar who is very active in
-            web development since 2010. Before that he has been working in the
-            field of Desktop
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            voluptates ullam quidem cumque repellendus nam accusantium corrupti
+            sequi debitis error numquam natus quae culpa eius quasi, accusamus
+            voluptatem distinctio quam! Debitis blanditiis sint impedit nostrum
+            eligendi maxime officia laboriosam labore.
           </p>
         </div>
         <div class="footer-widget">
@@ -75,17 +77,19 @@
           </p>
         </div>
         <div class="footer-widget">
-          <h4>About Us</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi quas
-            quam libero ut possimus in commodi? Nulla dignissimos rerum totam
-            numquam dolores, iusto vitae excepturi. Fugiat aliquam vel rerum
-            animi!
-          </p>
-        </div>
-        <div class="footer-widget">
-          <h4>About Us</h4>
+          <h4>About Company</h4>
           <ul>
+            <li><a href="{% url 'aboutus' %}">About us</a></li>
+            <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+            <li><a href="{% url 'disclaimer' %}">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div class="footer-widget">
+          <h4>Contrubute</h4>
+          <ul>
+            <li><a href="{% url 'submit_code' %}">Submit Your Code</a></li>
+            <li><a href="{% url 'write' %}">Write for us</a></li>
+            <li><a href="{% url 'contact_us' %}">contact us</a></li>
             <li>
               <a href="{% url 'django.contrib.sitemaps.views.sitemap' %}"
                 >sitemap</a

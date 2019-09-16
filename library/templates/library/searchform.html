@@ -1,10 +1,23 @@
-<form id="searchform" class="searchform" action="{% url 'search_result' %}" method="get" accept-charset="utf-8">
-      {% csrf_token %}     
-      <input class="searchfield" id="searchbox" name="q" type="text" value="{{request.GET.q}}" placeholder="Search">
-      <select name="lang">
-          <option value="">All Languages</option>
-          <option value="Python">Python</option>
-          <option value="CPP">C++</option>
-      </select>
-      <button class="searchbutton" type="submit" value="Search">Search</button>
+<form
+  id="searchform"
+  class="searchform"
+  action="{% url 'search_result' %}"
+  method="get"
+  accept-charset="utf-8"
+>
+  {% csrf_token %}
+  <input
+    class="searchfield"
+    id="searchbox"
+    name="q"
+    type="text"
+    value="{{ request.GET.q }}"
+    placeholder="Search"
+  />
+  <select name="lang">
+    <option value="">All Languages</option>
+    <option value="Python">Python</option>
+    <option value="CPP">C++</option>
+  </select>
+  <button class="searchbutton" type="submit" value="Search">Search</button>
 </form>
