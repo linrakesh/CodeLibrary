@@ -1,19 +1,16 @@
 {% extends 'library/base.html' %} {% block content %}
 <h1>Contact Us</h1>
 <div class="container">
-  <div class="div">
-    <form id="contact-form" action="" method="get">
+     <form id="contact-form" action="" method="get">
           {% csrf_token %}
           <label for="name">Name </label>
           <input type="text" name="name" class="input"><br/>
           <label for="email">Email </label>
           <input type="email" name="email" class="email"><br/>
           <label for="message">Message </label></br />
-          <textarea name="message" id="msg" cols="30" rows="10"></textarea>
-          <button type="submit" value="submit">Send Message</button><br/>
+          <textarea name="message" id="msg" cols="30" rows="10"></textarea><br/>
+          <button type="submit" value="submit">Send Message</button>
           <button type="reset">Reset</button>
     </form>
-    
-  </div><!--end of form-->
   </div>
 {% endblock content%}

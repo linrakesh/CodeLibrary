@@ -109,6 +109,7 @@ def submit_code(request):
 
 def contact_us(request):
     if request.method == 'GET':
+        email_receiver = ['rakesh@binarynote.com']
         name = request.GET['name']
         email = request.GET['email']
         message = request.GET['message']
@@ -116,6 +117,6 @@ def contact_us(request):
         send_mail('Email from Code Library',
                     message,
                     settings.EMAIL_HOST_USER,
-                    ['rakesh@binarynote.com'],
+                    email_receiver,
                     fail_silently=False)
     return render(request, "library/contact_us.html")
