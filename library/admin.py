@@ -17,6 +17,7 @@ class codeAdmin(admin.ModelAdmin):
     # '-' is used to display oject in descending order
     ordering = ['-updated_on']
 
+admin.site.site_header ="Code Library Admin Panel"
 
 admin.site.register(language)
 admin.site.register(websiteOption)

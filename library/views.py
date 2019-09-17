@@ -1,4 +1,6 @@
 from django.urls import reverse_lazy
+from django.core.mail import send_mail
+from django.conf import settings
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
@@ -106,4 +108,14 @@ def submit_code(request):
 
 
 def contact_us(request):
+    if request.method == 'GET':
+        name = request.GET['name']
+        email = request.GET['email']
+        message = request.GET['message']
+        message = " Sender Name :" +name + " Email ID : " + email +" \n Message :" +message
+        send_mail('Email from Code Library',
+                    message,
+                    settings.EMAIL_HOST_USER,
+                    ['rakesh@binarynote.com'],
+                    fail_silently=False)
     return render(request, "library/contact_us.html")
