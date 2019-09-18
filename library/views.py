@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.core.mail import send_mail
 from django.conf import settings
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from .models import language, code, websiteOption
@@ -107,16 +107,22 @@ def submit_code(request):
     return render(request, "library/submit_code.html")
 
 
+def success(request):
+    return render(request, "library/success.html")
+
+
 def contact_us(request):
-    if request.method == 'GET':
+    if request.GET:
         email_receiver = ['rakesh@binarynote.com']
-        name = request.GET['name']
-        email = request.GET['email']
+        username = request.GET['user_name']
+        useremail = request.GET['user_email']
         message = request.GET['message']
-        message = " Sender Name :" +name + " Email ID : " + email +" \n Message :" +message
+        message = " Sender Name :" + username + " Email ID : " + \
+            useremail + " \n Message :" + message
         send_mail('Email from Code Library',
-                    message,
-                    settings.EMAIL_HOST_USER,
-                    email_receiver,
-                    fail_silently=False)
+                  message,
+                  settings.EMAIL_HOST_USER,
+                  email_receiver,
+                  fail_silently=False)
+        return redirect('success')
     return render(request, "library/contact_us.html")

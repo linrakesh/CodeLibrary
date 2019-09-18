@@ -4,11 +4,11 @@
      <form id="contact-form" action="" method="get">
           {% csrf_token %}
           <label for="name">Name </label>
-          <input type="text" name="name" class="input"><br/>
+            <input type="text" name="user_name" value="name"><br/>
           <label for="email">Email </label>
-          <input type="email" name="email" class="email"><br/>
+            <input type="email" name="user_email" value="email"><br/>
           <label for="message">Message </label></br />
-          <textarea name="message" id="msg" cols="30" rows="10"></textarea><br/>
+            <textarea name="message" id="msg" cols="30" rows="10" value ="message"></textarea><br/>
           <button type="submit" value="submit">Send Message</button>
           <button type="reset">Reset</button>
     </form>
