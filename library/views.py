@@ -1,5 +1,6 @@
 from django.urls import reverse_lazy
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 from django.conf import settings
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
@@ -119,10 +120,11 @@ def contact_us(request):
         message = request.GET['message']
         message = " Sender Name :" + username + " Email ID : " + \
             useremail + " \n Message :" + message
-        send_mail('Email from Code Library',
-                  message,
-                  settings.EMAIL_HOST_USER,
-                  email_receiver,
-                  fail_silently=False)
+        try:
+            send_mail('Email from Code Library', message,
+                      settings.EMAIL_HOST_USER, email_receiver, fail_silently=False)
+        except BadHeaderError:
+            return HttpResponse("Invalid Header found")
         return redirect('success')
+
     return render(request, "library/contact_us.html")
