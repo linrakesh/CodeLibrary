@@ -3,12 +3,12 @@
 <div class="container">
      <form id="contact-form" action="" method="get">
           {% csrf_token %}
-          <label for="name">Name </label>
+          <label for="name">Name </label><br/>
             <input type="text" name="user_name" value="name"><br/>
-          <label for="email">Email </label>
+          <label for="email">Email </label><br/>
             <input type="email" name="user_email" value="email"><br/>
           <label for="message">Message </label></br />
-            <textarea name="message" id="msg" cols="30" rows="10" value ="message"></textarea><br/>
+            <textarea name="message" cols="80" rows="10" value ="message"></textarea><br/>
           <button type="submit" value="submit">Send Message</button>
           <button type="reset">Reset</button>
     </form>
